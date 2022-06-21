@@ -1,8 +1,20 @@
 package model
 
 import (
+	"github.com/astaxie/beego/orm"
+	"project/config"
 	"strings"
 )
+
+const debug = false
+
+func SetOrm() {
+	config.Once.Do(func() {
+		orm.Debug = debug
+		_ = orm.RegisterDataBase("default", "mysql", "root:root(127.0.0.1:3306)/zhifa?charset=utf8")
+		orm.RegisterModel(new(SftLawMainBody))
+	})
+}
 
 //创建查询语句
 func buildSql(tableName string, where [][]string, field string, limit string, deleteTime string) string {
