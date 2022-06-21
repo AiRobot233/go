@@ -2,7 +2,6 @@ package model
 
 import (
 	"github.com/astaxie/beego/orm"
-	"project/config"
 	"project/utils"
 	"strconv"
 	"time"
@@ -11,7 +10,7 @@ import (
 const deleteTime = ""
 
 func init() {
-	config.SetOrm()
+	SetOrm()
 }
 
 //执法主体表

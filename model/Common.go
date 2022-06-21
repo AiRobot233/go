@@ -1,7 +1,6 @@
 package model
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -29,6 +28,5 @@ func buildSql(tableName string, where [][]string, field string, limit string, de
 	if limit != "" {
 		str += " LIMIT " + limit
 	}
-	fmt.Println(str)
 	return str
 }
