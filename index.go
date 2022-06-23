@@ -9,7 +9,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.Use(middleware.LoginAuth()).GET("/someGet", func(context *gin.Context) {
+	router.Use(middleware.LoginAuth()).POST("/someGet", func(context *gin.Context) {
 		bol := validate.LoginValidate(context)
 		if bol {
 			controller.Login(context)

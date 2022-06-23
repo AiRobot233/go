@@ -18,7 +18,7 @@ func LoginValidate(context *gin.Context) bool {
 		return false
 	}
 	var l loginValidate
-	err := context.ShouldBindWith(&l, binding.Query)
+	err := context.ShouldBindWith(&l, binding.Form)
 	if err != nil {
 		if errs, ok := err.(validator.ValidationErrors); ok {
 			utils.ValidateError(context, errs.Translate(Trans))
