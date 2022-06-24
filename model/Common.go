@@ -9,7 +9,7 @@ import (
 
 const debug = false
 
-func SetOrm() {
+func setOrm() {
 	config.Once.Do(func() {
 		orm.Debug = debug
 		_ = orm.RegisterDataBase("default", "mysql", "root:root@(127.0.0.1:3306)/zhifa?charset=utf8")

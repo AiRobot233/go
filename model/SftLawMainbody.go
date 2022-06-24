@@ -10,7 +10,7 @@ import (
 const deleteTime = ""
 
 func init() {
-	SetOrm()
+	setOrm()
 }
 
 //执法主体表
