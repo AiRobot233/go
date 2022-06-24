@@ -15,5 +15,8 @@ func main() {
 			controller.Login(context)
 		}
 	})
+	router.POST("/redis", func(context *gin.Context) {
+		controller.Redis()
+	})
 	_ = router.Run(":8080")
 }
