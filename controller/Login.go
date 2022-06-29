@@ -22,7 +22,7 @@ func Login(context *gin.Context) {
 	data := m.First(where, "id,name")
 	data["password"] = password
 	data["username"] = username
-	utils.Success(context, "成功", data)
+	utils.Success(context, data)
 }
 
 func Redis() {

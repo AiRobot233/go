@@ -11,10 +11,10 @@ func Jwt(context *gin.Context) {
 	data["uid"] = 1
 	data["user_name"] = "hhh"
 	token := utils.GetJwt(data, 21)
-	utils.Success(context, "成功", token)
+	utils.Success(context, token)
 }
 
 func A(context *gin.Context) {
 	data, _ := context.Get("user")
-	utils.Success(context, "", data)
+	utils.Success(context, data)
 }
