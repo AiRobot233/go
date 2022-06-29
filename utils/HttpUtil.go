@@ -14,7 +14,7 @@ func Success(context *gin.Context, msg string, data interface{}) {
 	})
 }
 
-func Error(context *gin.Context, msg error) {
+func Error(context *gin.Context, msg interface{}) {
 	context.JSON(400, gin.H{
 		"error":   1,
 		"message": msg,

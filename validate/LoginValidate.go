@@ -14,7 +14,7 @@ type loginValidate struct {
 
 func LoginValidate(context *gin.Context) bool {
 	if err := ValidatorTrans("zh"); err != nil {
-		utils.Error(context, err)
+		utils.Error(context, err.Error())
 		return false
 	}
 	var l loginValidate

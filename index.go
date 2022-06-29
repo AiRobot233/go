@@ -9,7 +9,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.Use(middleware.LoginAuth()).POST("/someGet", func(context *gin.Context) {
+	router.POST("/someGet", func(context *gin.Context) {
 		bol := validate.LoginValidate(context)
 		if bol {
 			controller.Login(context)
@@ -17,6 +17,12 @@ func main() {
 	})
 	router.POST("/redis", func(context *gin.Context) {
 		controller.Redis()
+	})
+	router.GET("/jwt", func(context *gin.Context) {
+		controller.Jwt(context)
+	})
+	router.Use(middleware.LoginAuth()).POST("/check_jwt", func(context *gin.Context) {
+		controller.A(context)
 	})
 	_ = router.Run(":8080")
 }
