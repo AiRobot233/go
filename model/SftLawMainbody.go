@@ -49,8 +49,7 @@ func (*SftLawMainBody) TableName() string {
 
 func getTableName() string {
 	body := SftLawMainBody{}
-	name := body.TableName()
-	return name
+	return body.TableName()
 }
 
 //查询所有数据

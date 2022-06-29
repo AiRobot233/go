@@ -16,9 +16,9 @@ var m = model.SftLawMainBody{}
 func Login(context *gin.Context) {
 	password := context.PostForm("password")
 	username := context.PostForm("username")
-	where = [][]string{
-		{"pid", "=", "1"},
-	}
+	//where = [][]string{
+	//	{"pid", "=", "1"},
+	//}
 	data := m.First(where, "id,name")
 	data["password"] = password
 	data["username"] = username
