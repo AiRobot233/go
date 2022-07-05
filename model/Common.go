@@ -8,10 +8,11 @@ import (
 
 const debug = false
 
-func setOrm() {
+func init() {
 	orm.Debug = debug
-	_ = orm.RegisterDataBase("default", "mysql", "root:root@(127.0.0.1:3306)/zhifa?charset=utf8")
+	_ = orm.RegisterDataBase("default", "mysql", "root:root@(127.0.0.1:3306)/zhifa?charset=utf8&loc=Local")
 	orm.RegisterModel(new(SftLawMainBody))
+	orm.RegisterModel(new(SftLawCategory))
 	_ = orm.NewOrm().Using("default")
 }
 
